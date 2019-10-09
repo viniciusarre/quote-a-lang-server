@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
+const axios = require('axios').default;
 const request = require('supertest');
 
 const app = require('../../src/app');
 const Quotes = require('../../src/models/Quotes');
+
+jest.mock('axios');
 
 describe('/quotes', () => {
   let db;
@@ -107,9 +110,24 @@ describe('/quotes', () => {
     });
   });
 
-  xdescribe('/fetchNew', () => {
+  describe('/fetchNew', () => {
     test('POST sends author to crawler', async () => {
+      const author = 'John Doe';
 
+      // Don't make actual request, fake successful response
+      axios.get.mockResolvedValue({
+        data: {
+          success: true,
+        },
+      });
+
+      await request(app)
+        .post('/quotes/fetchNew')
+        .send({ author })
+        .expect(200);
+
+      expect(axios.get.mock.calls).toHaveLength(1);
+      expect(axios.get.mock.calls[0][0].endsWith(author)).toBe(true);
     });
   });
 });
