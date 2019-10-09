@@ -64,12 +64,12 @@ export const signUp = (user, email, password) => {
 export const verifyToken = (req, res) => {
   const token = req.headers.authorization;
   if (!token) {
-    res.status(400).json({ error: 'No token provided' });
+    return res.status(400).json({ error: 'No token provided' });
   }
   const bearerToken = token.split(' ')[1];
   return jwt.verify(bearerToken || token, secret, (error, decoded) => {
     if (error) {
-      res.status(400).json(error);
+      return res.status(400).json(error);
     }
     req.email = decoded.email;
   });
