@@ -30,15 +30,15 @@ describe('/quotes', () => {
       const savedQuotes = await Quotes.create([
         {
           _id: 1,
-          autor: 'Lao Tzu',
-          dados: [
+          author: 'Lao Tzu',
+          data: [
             {
-              fontes: [
+              sources: [
                 'https://www.brainyquote.com/quotes/lao_tzu_398196',
               ],
-              frases: [
+              quotes: [
                 {
-                  autor: 'Lao Tzu',
+                  author: 'Lao Tzu',
                   language: 'en',
                   quote: 'Do the difficult things while they are easy and do the great things while they are small. A journey of a thousand miles must begin with a single step.',
                 },
@@ -48,15 +48,15 @@ describe('/quotes', () => {
         },
         {
           _id: 2,
-          autor: 'Pablo Picasso',
-          dados: [
+          author: 'Pablo Picasso',
+          data: [
             {
-              fontes: [
+              sources: [
                 'http://spanish-learning-corner.com/pablo-picasso-quotes.html',
               ],
-              frases: [
+              quotes: [
                 {
-                  autor: 'Pablo Picasso',
+                  author: 'Pablo Picasso',
                   language: 'es',
                   quote: 'Yo hago lo imposible, porque lo posible lo hace cualquiera.',
                 },
@@ -70,7 +70,7 @@ describe('/quotes', () => {
           author: 'Lao Tzu',
           language: 'fr',
           quote: {
-            autor: 'Lao Tzu',
+            author: 'Lao Tzu',
             language: 'en',
             quote: 'Do the difficult things while they are easy and do the great things while they are small. A journey of a thousand miles must begin with a single step.',
           },
@@ -80,7 +80,7 @@ describe('/quotes', () => {
           author: 'Pablo Picasso',
           language: 'fr',
           quote: {
-            autor: 'Pablo Picasso',
+            author: 'Pablo Picasso',
             language: 'es',
             quote: 'Yo hago lo imposible, porque lo posible lo hace cualquiera.',
           },
@@ -100,7 +100,7 @@ describe('/quotes', () => {
       const author = 'John Doe';
       const savedQuote = await Quotes.create({
         _id: 1,
-        autor: author,
+        author: author,
       });
 
       await request(app)

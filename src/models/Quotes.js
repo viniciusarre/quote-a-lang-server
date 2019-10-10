@@ -1,16 +1,16 @@
 const mongoose = require("mongoose");
 
-const fraseSchema = new mongoose.Schema({
+const quoteSchema = new mongoose.Schema({
   _id: { type: Number },
-  idioma: { type: String, default: "fr" },
-  autor: { type: String },
-  bandeira: { type: String },
-  nome_url: { type: String },
-  dados: { type: Array }
+  language: { type: String, default: "fr" },
+  author: { type: String },
+  flag: { type: String },
+  name_url: { type: String },
+  data: { type: Array }
 });
 
-fraseSchema.pre("save", next => {
+quoteSchema.pre("save", next => {
   next();
 });
 
-module.exports = mongoose.model("frase", fraseSchema);
+module.exports = mongoose.model("quote", quoteSchema);
