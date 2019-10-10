@@ -5,12 +5,12 @@ module.exports = () => {
 
   global.db = mongoose.connect(DB_URI, { useNewUrlParser: true });
   mongoose.connection.on("connected", function() {
-    console.log("=====Conexão estabelecida com sucesso=====");
+    console.log("=====Connection established with success=====");
   });
   mongoose.connection.on("error", function(err) {
-    console.log("=====Ocorreu um erro: " + err);
+    console.log("=====An error ocurred: " + err);
   });
   mongoose.connection.on("disconnected", function() {
-    console.log("=====Conexão finalizada=====");
+    console.log("=====Finished connection=====");
   });
 };

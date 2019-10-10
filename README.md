@@ -15,6 +15,20 @@ The project has currently a simple node env, we designed two scripts:
 
 `npm run dev` - starts development environment, with hot-reloading
 
-`ǹpm start` - starts the production server, without hot reloading...  
+`npm start` - starts the production server, without hot reloading...
 
+To install the project dependencies:
 
+`npm install`
+
+To run the tests:
+
+`npm test`
+
+## Running MongoDB
+
+The server tries to connect to a MongoDB instance at port 27017 on localhost. You can do this easily using docker with the following command:
+
+`docker run -it -p27017:27017 --name mongodb -d mongo`
+
+This runs a new container with the last version of the `mongo` image and forwards the local port 27017 to the port 27017 in the container instance with name `mongodb`.
