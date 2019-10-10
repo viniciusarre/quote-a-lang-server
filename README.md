@@ -43,7 +43,5 @@ Stand-alone populate scripts will be coming soon!
 
 A warm thanks to all the contributors helping this project grow! I appreciate your effort! 
 
-[cainwatson](https://github.com/cainwatson)
-[Nerocodes](https://github.com/Nerocodes)
-[spassarop](https://github.com/spassarop)
+[cainwatson](https://github.com/cainwatson), [Nerocodes](https://github.com/Nerocodes) and [spassarop](https://github.com/spassarop)
 
