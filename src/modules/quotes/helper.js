@@ -21,14 +21,14 @@ export const getQuotes = () => {
         } else {
           let result = [];
           quotes.map(q => {
-            q.dados.map(d => {
-              d.frases.map((f, i) => {
+            q.data.map(d => {
+              d.quotes.map((f, i) => {
                 let current = {
-                  author: q.autor,
-                  flag: q.bandeira,
-                  language: q.idioma,
+                  author: q.author,
+                  flag: q.flag,
+                  language: q.language,
                   quote: f,
-                  source: d.fontes[i]
+                  source: d.sources[i]
                 };
                 result.push(current);
               });
@@ -72,6 +72,7 @@ export const fetchNewQuotes = author => {
   });
 };
 
+<<<<<<< HEAD
 /**
  * @desc Method that retreives a quote by a given author in the db store
  * @memberof quoteHelper 
@@ -79,8 +80,11 @@ export const fetchNewQuotes = author => {
  * @returns {Promise} Promise that returns a quote
  */
 export const fetchAQuote = autor => {
+=======
+export const fetchAQuote = author => {
+>>>>>>> master
   return new Promise((resolve, reject) => {
-    Quotes.find({ autor })
+    Quotes.find({ author })
       .then(result => {
         if (result) {
           resolve(result);

@@ -1,4 +1,7 @@
 const User = require("../../models/User");
+const jwt = require("jsonwebtoken");
+
+const secret = process.env.SECRET || 'secret';
 //make it better
 
 /**
@@ -38,11 +41,14 @@ export const login = (email, password) => {
  * @returns {Promise}
  */
 export const signUp = (user, email, password) => {
+  const token = jwt.sign({ email }, secret);
+
   return new Promise((resolve, reject) => {
     const newUser = new User({
       user,
       email,
-      password
+      password,
+      token
     });
     newUser
       .save()
@@ -55,3 +61,24 @@ export const signUp = (user, email, password) => {
       });
   });
 };
+
+/**
+ * @desc Validate authentication token
+ * @param {object} request
+ * @param {object} response
+ * @param {*} next
+ * @returns {*} json or next
+ */
+export const verifyToken = (req, res) => {
+  const token = req.headers.authorization;
+  if (!token) {
+    return res.status(400).json({ error: 'No token provided' });
+  }
+  const bearerToken = token.split(' ')[1];
+  return jwt.verify(bearerToken || token, secret, (error, decoded) => {
+    if (error) {
+      return res.status(400).json(error);
+    }
+    req.email = decoded.email;
+  });
+}
