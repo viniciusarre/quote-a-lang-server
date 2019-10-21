@@ -64,6 +64,7 @@ export const signUp = (user, email, password) => {
 
 /**
  * @desc Validate authentication token
+ * @memberof authHelper
  * @param {object} request
  * @param {object} response
  * @param {*} next

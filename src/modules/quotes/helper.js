@@ -72,7 +72,6 @@ export const fetchNewQuotes = author => {
   });
 };
 
-<<<<<<< HEAD
 /**
  * @desc Method that retreives a quote by a given author in the db store
  * @memberof quoteHelper 
@@ -80,9 +79,6 @@ export const fetchNewQuotes = author => {
  * @returns {Promise} Promise that returns a quote
  */
 export const fetchAQuote = autor => {
-=======
-export const fetchAQuote = author => {
->>>>>>> master
   return new Promise((resolve, reject) => {
     Quotes.find({ author })
       .then(result => {
