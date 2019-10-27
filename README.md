@@ -9,6 +9,8 @@ We're looking for help in order to expand the number of languages supported by t
 
 The project's aimed to be opensource and we'll be accepting contributions in the future!
 
+If you'd like to learn more, please check its [monthly project updates](https://viniciusarre.wordpress.com/category/quote-a-lang/)
+
 # Running the project
 
 The project has currently a simple node env, we designed two scripts:
