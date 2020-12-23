@@ -13,9 +13,6 @@ const helper = require("./helper");
  * returns a 500
  */
 export const getQuotes = (req, res) => {
-  console.log("====================================");
-  console.log(req.body);
-  console.log("=================controller===================");
 
   //    console.log("BODY >> ", req.body);
   helper

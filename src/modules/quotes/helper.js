@@ -45,7 +45,7 @@ export const getQuotes = () => {
 };
 
 /**
- * @desc Method that retreives new quotes from a given author in the db store
+ * @desc Method that retrieves new quotes from a given author in the db store
  * @memberof quoteHelper
  * @param {string} author Name of a quote's author
  * @returns {Promise} Promise that returns an array of quote data
@@ -73,12 +73,12 @@ export const fetchNewQuotes = author => {
 };
 
 /**
- * @desc Method that retreives a quote by a given author in the db store
+ * @desc Method that retrieves a quote by a given author in the db store
  * @memberof quoteHelper 
  * @param {string} author Name of a quote's author
  * @returns {Promise} Promise that returns a quote
  */
-export const fetchAQuote = autor => {
+export const fetchAQuote = (author) => {
   return new Promise((resolve, reject) => {
     Quotes.find({ author })
       .then(result => {
