@@ -13,7 +13,7 @@
   "author": "Vinícius Arré",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "express": "^4.16.4",
     "jsdoc": "^3.6.6",
     "jsonwebtoken": "^8.5.1",
